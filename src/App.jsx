@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Phone, Mail, MapPin, Menu } from 'lucide-react';
+import { ArrowRight, Menu, Target, ArrowUp } from 'lucide-react';
 import './App.css';
 import heroImg from './assets/images/hero.png';
 import heroImagePng from './assets/images/hero_image.png';
@@ -9,8 +9,20 @@ import perfImage from './assets/images/Rectangle 45.png';
 import aboutImg2 from './assets/images/6f15857a5bb666551cc51a2a7434e9ea6ee82c6c.jpg';
 import industryImage from './assets/images/Group 3.png';
 import logoImg from './assets/images/Logo.svg';
+import turnedImg from './assets/images/Brass Turned component.png';
+import forgedImg from './assets/images/Brass Forged component.png';
+import millingImg from './assets/images/Brass Milling component.png';
+import broachImg from './assets/images/Brass Broach component.png';
+import stampingImg from './assets/images/Brass Stamping component.png';
+import precisionIcon from './assets/images/file-icons_precision.png';
+import mapSvg from './assets/images/Map.svg';
+import footerLogo from './assets/images/Atletic logo bg remove 2.svg';
 
 const App = () => {
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   /* --- Scroll reveal logic --- */
   const revealRefs = useRef([]);
@@ -116,7 +128,7 @@ const App = () => {
       </section>
 
       {/* ========== ABOUT SECTION ========== */}
-      <section className="section" id="about" style={{ paddingTop: '8rem' }}>
+      <section className="section about-section" id="about">
         <div className="section-header reveal" ref={addRevealRef}>
           <span className="sub-heading">About Us</span>
           <h2>Precision Brass Manufacturing for Critical Industries</h2>
@@ -195,8 +207,8 @@ const App = () => {
       </section>
 
       {/* ========== INDUSTRY WE SERVE SECTION ========== */}
-      <section className="section" id="products" style={{ background: 'var(--bg-white)' }}>
-        <div className="section-header reveal" ref={addRevealRef} style={{ marginBottom: '4rem' }}>
+      <section className="section products-section" id="products">
+        <div className="section-header reveal products-header" ref={addRevealRef}>
           <span className="sub-heading">Industry We Serve</span>
           <h2>Precision solutions for critical global industries</h2>
         </div>
@@ -225,8 +237,8 @@ const App = () => {
 
         <div className="perf-tabs">
           {['CNC Machining', 'Quality Control', 'Production Efficiency', 'Compliance'].map((tab, i) => (
-            <div 
-              key={i} 
+            <div
+              key={i}
               className={`perf-tab ${activePerfTab === i ? 'active' : ''}`}
               onClick={() => setActivePerfTab(i)}
             >
@@ -240,7 +252,7 @@ const App = () => {
             <h3>Details</h3>
 
             <div className="perf-card">
-              <div className="perf-card-header" style={{ marginBottom: '1.25rem' }}>
+              <div className="perf-card-header perf-card-header-custom">
                 <span className="perf-ring"></span>
                 <h4>High Accuracy Machining</h4>
               </div>
@@ -266,13 +278,14 @@ const App = () => {
         </div>
       </section>
 
+
       {/* ========== EXCELLENCE SECTION ========== */}
       <section className="section" id="excellence">
-        <div className="section-header reveal" ref={addRevealRef} style={{ marginBottom: '4rem' }}>
+        <div className="section-header reveal section-header-spacing" ref={addRevealRef}>
           <span className="sub-heading">Manufacturing Excellence</span>
-          <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)' }}>Precision-driven manufacturing solutions</h2>
+          <h2>Precision-driven manufacturing solutions</h2>
         </div>
-        
+
         <div className="excellence-grid reveal" ref={addRevealRef}>
           <div className="excellence-left">
             <p className="excellence-desc">
@@ -308,84 +321,233 @@ const App = () => {
         </div>
       </section>
 
-      {/* ========== MAP / GLOBAL REACH ========== */}
-      <section className="section map-section" style={{ background: 'var(--bg-light)' }}>
-        <div className="section-header reveal" ref={addRevealRef}>
-          <h2>Delivering Precision, Consistency, and Reliability to Every Component</h2>
-          <p>Our products are trusted by clients across the globe. We export to over 50 countries worldwide.</p>
+      {/* ========== COMPONENTS OVAL SECTION ========== */}
+      <section className="section" id="oval-components">
+        <div className="section-header reveal section-header-spacing" ref={addRevealRef}>
+          <span className="sub-heading">Featured Products</span>
+          <h2>Our Brass Components</h2>
         </div>
-        <div className="map-img reveal" ref={addRevealRef}>
-          {/* Placeholder for world map */}
-          <div style={{ width: '100%', height: 300, background: '#E8E9EF', borderRadius: 16, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <span style={{ color: '#676C86', fontSize: '1.1rem' }}>World Map — Add your map image here</span>
-          </div>
-        </div>
-        <div className="flags-row reveal" ref={addRevealRef}>
-          {['India', 'USA', 'Germany', 'Italy', 'Mexico', 'Spain'].map((country, i) => (
-            <div className="flag-item" key={i}>
-              <div style={{ width: 48, height: 32, background: '#CCC', borderRadius: 4 }}></div>
-              <span>{country}</span>
+        <div className="components-oval-container reveal" ref={addRevealRef}>
+          <div className="component-oval-item">
+            <div className="component-oval-img">
+              <img src={turnedImg} alt="Brass Turned component" />
             </div>
-          ))}
+            <h3>Brass Turned Component</h3>
+          </div>
+          <div className="component-oval-item">
+            <div className="component-oval-img">
+              <img src={forgedImg} alt="Brass Forged component" />
+            </div>
+            <h3>Brass Forged Component</h3>
+          </div>
+          <div className="component-oval-item">
+            <div className="component-oval-img">
+              <img src={millingImg} alt="Brass Milling component" />
+            </div>
+            <h3>Brass Milling Component</h3>
+          </div>
+          <div className="component-oval-item">
+            <div className="component-oval-img">
+              <img src={broachImg} alt="Brass Broach component" />
+            </div>
+            <h3>Brass Broach Component</h3>
+          </div>
+          <div className="component-oval-item">
+            <div className="component-oval-img">
+              <img src={stampingImg} alt="Brass Stamping component" />
+            </div>
+            <h3>Brass Stamping Component</h3>
+          </div>
         </div>
       </section>
 
-      {/* ========== CTA SECTION ========== */}
-      <section className="cta-section reveal" ref={addRevealRef}>
-        <h2>Looking for a Reliable Manufacturing Partner?</h2>
-        <p>Get in touch with us today to discuss your requirements and receive a custom quote.</p>
-        <a href="#contact" className="btn-primary">
-          Contact Us <ArrowRight size={16} />
-        </a>
+      {/* ========== QUALITY SECTION ========== */}
+      <section className="section quality-section" id="quality-trust">
+        <div className="section-header reveal quality-header" ref={addRevealRef}>
+          <span className="sub-heading quality-subheading">Quality You Can Trust</span>
+          <h2 className="quality-heading">
+            Delivering precision, consistency, and reliability in every component
+          </h2>
+        </div>
+
+        <div className="quality-grid reveal" ref={addRevealRef}>
+
+          <div className="quality-card">
+            <div className="quality-icon">
+              <img src={precisionIcon} alt="Quality Icon" style={{ width: '18px', height: '18px' }} />
+            </div>
+            <h4>Precision Inspection at Every Stage</h4>
+            <p>Every component is carefully inspected throughout the manufacturing process to ensure accuracy, consistency, and defect-free production.</p>
+          </div>
+
+          <div className="quality-card">
+            <div className="quality-icon">
+              <img src={precisionIcon} alt="Quality Icon" style={{ width: '18px', height: '18px' }} />
+            </div>
+            <h4>High-Quality Raw Materials</h4>
+            <p>We use premium-grade brass materials to ensure durability, strength, and long-lasting performance in every product.</p>
+          </div>
+
+          <div className="quality-card">
+            <div className="quality-icon">
+              <img src={precisionIcon} alt="Quality Icon" style={{ width: '18px', height: '18px' }} />
+            </div>
+            <h4>Advanced Testing Equipment</h4>
+            <p>Our facility is equipped with modern testing tools and instruments to verify precision, dimensions, and overall product quality.</p>
+          </div>
+
+          <div className="quality-card">
+            <div className="quality-icon">
+              <img src={precisionIcon} alt="Quality Icon" style={{ width: '18px', height: '18px' }} />
+            </div>
+            <h4>Compliance with Global Standards</h4>
+            <p>All components are manufactured in accordance with international quality standards to meet global industry requirements.</p>
+          </div>
+
+          <div className="quality-card">
+            <div className="quality-icon">
+              <img src={precisionIcon} alt="Quality Icon" style={{ width: '18px', height: '18px' }} />
+            </div>
+            <h4>Consistent Batch Production</h4>
+            <p>We maintain uniformity across all production batches, ensuring consistent quality and performance in every delivery.</p>
+          </div>
+
+          <div className="quality-card">
+            <div className="quality-icon">
+              <img src={precisionIcon} alt="Quality Icon" style={{ width: '18px', height: '18px' }} />
+            </div>
+            <h4>Zero-Defect Quality Approach</h4>
+            <p>Our strict quality control system is designed to minimize defects and deliver flawless components every time.</p>
+          </div>
+
+        </div>
+      </section>
+
+      {/* ========== GLOBAL MAP & CTA SECTION ========== */}
+      <section className="section global-cta-section reveal" ref={addRevealRef} id="contact-map">
+        <div className="global-cta-header">
+          <h2>Looking for a Reliable Manufacturing Partner?</h2>
+          <p>Get precision-engineered brass components tailored to your exact requirements.</p>
+        </div>
+
+        <div className="global-map-container">
+          <img src={mapSvg} alt="Global Operations Map" className="world-map-img" />
+        </div>
+
+        <div className="global-cta-footer">
+          <div className="global-cta-text">
+            <p>Partner with us for high-quality manufacturing, consistent performance, and on-time delivery across global markets.</p>
+            <a href="#contact" className="btn-explore" style={{ display: 'inline-block', textDecoration: 'none' }}>
+              Contact Now
+            </a>
+          </div>
+          <div className="global-flags">
+            <img src="https://flagcdn.com/w40/us.png" alt="USA" />
+            <img src="https://flagcdn.com/w40/de.png" alt="Germany" />
+            <img src="https://flagcdn.com/w40/pe.png" alt="Peru" />
+            <img src="https://flagcdn.com/w40/br.png" alt="Brazil" />
+            <img src="https://flagcdn.com/w40/il.png" alt="Israel" />
+            <img src="https://flagcdn.com/w40/es.png" alt="Spain" />
+            <img src="https://flagcdn.com/w40/it.png" alt="Italy" />
+            <div className="flag-placeholder"></div>
+          </div>
+        </div>
       </section>
 
       {/* ========== FOOTER ========== */}
-      <footer className="footer" id="contact">
-        <div className="footer-grid">
-          <div className="footer-brand">
-            <h4 style={{ fontFamily: 'var(--heading-font)', color: 'var(--heading-color)', fontSize: '1.25rem' }}>
-              Atletic Engee Tech
-            </h4>
-            <p>
-              Your trusted partner for precision brass manufacturing.
-              Quality, innovation, and reliability in every component.
-            </p>
+      <footer className="footer">
+        <div className="footer-container">
+          <div className="footer-grid">
+            
+            {/* ROW 1: Navigation & Info */}
+            <div className="footer-nav-group footer-group-1-nav">
+              <div className="footer-col">
+                <h4>PAGES</h4>
+                <ul>
+                  <li><a href="#home">Home</a></li>
+                  <li><a href="#about">About</a></li>
+                  <li><a href="#categories">Categories</a></li>
+                  <li><a href="#products">Product</a></li>
+                  <li><a href="#contact">Contact</a></li>
+                </ul>
+              </div>
+              <div className="footer-col">
+                <h4>INDUSTRY</h4>
+                <ul>
+                  <li><a href="#defence">Defence</a></li>
+                  <li><a href="#ev-parts">EV Parts</a></li>
+                  <li><a href="#fastener">Fastener</a></li>
+                  <li><a href="#automotive">Automotive</a></li>
+                  <li><a href="#electrical">Electrical</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="footer-nav-group footer-group-2-nav">
+              <div className="footer-col" style={{marginLeft: '2rem'}}>
+                <h4>ATLETIC</h4>
+                <ul>
+                  <li><a href="#certificates">Certificates</a></li>
+                  <li><a href="#quality">Quality</a></li>
+                  <li><a href="#export">Export</a></li>
+                  <li><a href="#process">Process</a></li>
+                </ul>
+              </div>
+              <div className="footer-col">
+                <h4>PRODUCTS</h4>
+                <ul>
+                  <li><a href="#brass-turned">Brass Turned Component</a></li>
+                  <li><a href="#brass-forged">Brass Forged Component</a></li>
+                  <li><a href="#brass-milling">Brass Milling Component</a></li>
+                  <li><a href="#brass-broach">Brass Broach Component</a></li>
+                  <li><a href="#brass-stamping">Brass Stamping Component</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="footer-info-group">
+              <img src={footerLogo} alt="Atletic Logo" className="footer-logo" />
+              <div className="logo-divider"></div>
+              <p className="footer-contact">+91 98245 83526</p>
+              <p className="footer-email">info@atleticengeetech</p>
+            </div>
+
+            {/* ROW 2: Social */}
+            <div className="footer-social-group footer-group-1-social">
+              <div className="footer-divider"></div>
+              <div className="footer-social">
+                <span className="social-name">Facebook</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="social-icon">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                </svg>
+              </div>
+            </div>
+
+            <div className="footer-social-group footer-group-2-social">
+              <div className="footer-divider"></div>
+              <div className="footer-social" style={{marginLeft: '2rem'}}>
+                <span className="social-name">Whatsapp</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="social-icon">
+                  <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path>
+                </svg>
+              </div>
+            </div>
+
+            {/* ROW 3: Bottom Elements */}
+            <div className="footer-copyright-wrap">
+              <p className="copyright">© 2026 — All Copyrights reserved for Atletic Engee Tech</p>
+            </div>
+
+            <div className="footer-back-to-top-wrap">
+              <button className="scroll-top-btn" onClick={scrollToTop} aria-label="Scroll to top">
+                <ArrowUp size={20} />
+              </button>
+            </div>
+
           </div>
-          <div className="footer-col">
-            <h4>Quick Links</h4>
-            <a href="#home">Home</a>
-            <a href="#about">About Us</a>
-            <a href="#products">Products</a>
-            <a href="#manufacturing">Manufacturing</a>
-          </div>
-          <div className="footer-col">
-            <h4>Products</h4>
-            <a href="#products">Brass Fittings</a>
-            <a href="#products">Brass Connectors</a>
-            <a href="#products">Brass Valves</a>
-            <a href="#products">Brass Inserts</a>
-          </div>
-          <div className="footer-col">
-            <h4>Contact</h4>
-            <a href="mailto:info@atleticengeetech.com">
-              <Mail size={14} style={{ verticalAlign: 'middle', marginRight: 6 }} />
-              info@atleticengeetech.com
-            </a>
-            <a href="tel:+910000000000">
-              <Phone size={14} style={{ verticalAlign: 'middle', marginRight: 6 }} />
-              +91 00000 00000
-            </a>
-            <a href="#contact">
-              <MapPin size={14} style={{ verticalAlign: 'middle', marginRight: 6 }} />
-              Jamnagar, Gujarat, India
-            </a>
-          </div>
-        </div>
-        <div className="footer-bottom">
-          <span>© 2026 Atletic Engee Tech. All rights reserved.</span>
-          <span>Designed with precision.</span>
         </div>
       </footer>
+
     </>
   );
 };
