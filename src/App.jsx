@@ -68,79 +68,90 @@ const App = () => {
       </nav>
 
       {/* ========== NEW HERO ========== */}
-      <section className="hero-new" id="home">
-        <div className="hero-top-content">
-          <div className="hero-title">
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              Beyond Manufacturing: Your Complete Defence Solutions Partner
-            </motion.h1>
-          </div>
-          <div className="hero-desc">
-            <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              From precision components to advanced defence assemblies we transform complex engineering challenges into reliable, mission-ready solutions. Every product is built with accuracy, durability, and national security in mind.
-            </motion.p>
-            <motion.button
-              className="btn-explore"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-            >
-              Explore More
-            </motion.button>
-          </div>
+      <section
+        className="hero-new"
+        id="home"
+        style={{ '--hero-bg-image': `url(${heroImagePng})` }}
+      >
+        <div className="hero-content-wrap">
+          {/* Badge */}
+          <motion.div
+            className="hero-badge"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <span className="hero-badge-dot" />
+            Precision Engineering
+          </motion.div>
+
+          {/* Primary heading */}
+          <motion.h1
+            className="hero-heading-primary"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.75, delay: 0.1 }}
+          >
+            Beyond <br /> Manufacturing:
+          </motion.h1>
+
+          {/* Secondary muted heading */}
+          <motion.h2
+            className="hero-heading-secondary"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.75, delay: 0.2 }}
+          >
+            Your Complete <br /> Defence Solutions Partner
+          </motion.h2>
+
+          {/* Body text */}
+          <motion.p
+            className="hero-body-text"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.75, delay: 0.35 }}
+          >
+            From precision components to advanced defence assemblies, we
+            transform complex engineering challenges into reliable, mission-ready
+            solutions.
+          </motion.p>
+
+          {/* CTA button */}
+          <motion.button
+            className="btn-explore"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.75, delay: 0.5 }}
+          >
+            Explore More
+          </motion.button>
         </div>
-
-        <motion.div
-          className="hero-image-wrapper"
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.5 }}
-        >
-          <img src={heroImagePng} alt="Atletic Engee Tech Manufacturing Facility" className="hero-main-img" />
-
-          <div className="hero-stats-overlay">
-            <div className="hero-stat-card">
-              <h3>2007</h3>
-              <p>Since Manufacturing unit</p>
-            </div>
-            <div className="hero-stat-card">
-              <h3>300+</h3>
-              <p>components delivered</p>
-            </div>
-            <div className="hero-stat-card">
-              <h3>51k+</h3>
-              <p>Manufacturer Unit</p>
-            </div>
-            <div className="hero-stat-card">
-              <h3>10+</h3>
-              <p>Metals Processed</p>
-            </div>
-          </div>
-        </motion.div>
       </section>
 
-      {/* ========== ABOUT SECTION ========== */}
+      {/* ========== PERFORMANCE WE DELIVER (Modified About Section) ========== */}
       <section className="section about-section" id="about">
-        <div className="section-header reveal" ref={addRevealRef}>
-          <span className="sub-heading">About Us</span>
-          <h2>Precision Brass Manufacturing for Critical Industries</h2>
+        <div className="perf-deliver-header reveal reveal-up" ref={addRevealRef}>
+          <div className="perf-deliver-title">
+            <h2 className="title-navy">Performance We Deliver</h2>
+            <div className="title-underline"></div>
+          </div>
+          <div className="perf-deliver-desc">
+            <p>
+              We deliver precision-engineered brass components using advanced manufacturing processes, 
+              ensuring consistent quality, reliability, and performance across global industries and 
+              demanding applications.
+            </p>
+          </div>
         </div>
 
         <div className="about-grid new-about" ref={addRevealRef}>
-          <div className="about-images reveal" ref={addRevealRef}>
+          <div className="about-images reveal reveal-left" ref={addRevealRef}>
             <img src={aboutImg1} alt="Brass Components" className="about-img-top" />
             <img src={aboutImg2} alt="Manufacturing Plant" className="about-img-bottom" />
           </div>
 
-          <div className="about-text-content reveal" ref={addRevealRef}>
+          <div className="about-text-content reveal reveal-right" ref={addRevealRef}>
             <p className="about-desc">
               Specializing in precision-engineered brass components, we support industries where accuracy, durability, and performance are non-negotiable. Our expertise spans defense-grade components, EV parts, and industrial fasteners, manufactured using advanced CNC technology and high-quality raw materials.
             </p>
@@ -186,7 +197,7 @@ const App = () => {
         </div>
 
         {/* Flat Stats Bar */}
-        <div className="flat-stats-bar reveal" ref={addRevealRef}>
+        <div className="flat-stats-bar reveal reveal-up delay-1" ref={addRevealRef}>
           <div className="flat-stat-item">
             <h3>2007</h3>
             <p>Since Manufacturing unit</p>
@@ -208,22 +219,26 @@ const App = () => {
 
       {/* ========== INDUSTRY WE SERVE SECTION ========== */}
       <section className="section products-section" id="products">
-        <div className="section-header reveal products-header" ref={addRevealRef}>
+        <div className="section-header reveal reveal-up products-header" ref={addRevealRef}>
           <span className="sub-heading">Industry We Serve</span>
           <h2>Precision solutions for critical global industries</h2>
         </div>
-        <div className="industry-grid reveal" ref={addRevealRef}>
-          <img src={industryImage} alt="Industry Card 1" style={{ width: '100%' }} />
-          <img src={industryImage} alt="Industry Card 2" style={{ width: '100%' }} />
-          <img src={industryImage} alt="Industry Card 3" style={{ width: '100%' }} />
-          <img src={industryImage} alt="Industry Card 4" style={{ width: '100%' }} />
-          <img src={industryImage} alt="Industry Card 5" style={{ width: '100%' }} />
-          <img src={industryImage} alt="Industry Card 6" style={{ width: '100%' }} />
+        <div className="industry-grid">
+          {[1, 2, 3, 4, 5, 6].map((item, i) => (
+            <img 
+              key={i}
+              src={industryImage} 
+              alt={`Industry Card ${item}`} 
+              className={`reveal reveal-up delay-${(i % 3) + 1}`}
+              ref={addRevealRef}
+              style={{ width: '100%' }} 
+            />
+          ))}
         </div>
       </section>
 
       {/* ========== PERFORMANCE SECTION ========== */}
-      <section className="section reveal" id="manufacturing" ref={addRevealRef}>
+      <section className="section reveal reveal-up" id="manufacturing" ref={addRevealRef}>
         <div className="perf-header">
           <div className="perf-title">
             <h2>Precision Manufacturing,<br />Built for Performance</h2>
@@ -281,12 +296,12 @@ const App = () => {
 
       {/* ========== EXCELLENCE SECTION ========== */}
       <section className="section" id="excellence">
-        <div className="section-header reveal section-header-spacing" ref={addRevealRef}>
+        <div className="section-header reveal reveal-up section-header-spacing" ref={addRevealRef}>
           <span className="sub-heading">Manufacturing Excellence</span>
           <h2>Precision-driven manufacturing solutions</h2>
         </div>
 
-        <div className="excellence-grid reveal" ref={addRevealRef}>
+        <div className="excellence-grid reveal reveal-up delay-1" ref={addRevealRef}>
           <div className="excellence-left">
             <p className="excellence-desc">
               Our manufacturing capabilities are built on precision engineering, advanced CNC technology, and strict quality control delivering high-performance brass components for critical industries worldwide.
@@ -323,11 +338,11 @@ const App = () => {
 
       {/* ========== COMPONENTS OVAL SECTION ========== */}
       <section className="section" id="oval-components">
-        <div className="section-header reveal section-header-spacing" ref={addRevealRef}>
+        <div className="section-header reveal reveal-up section-header-spacing" ref={addRevealRef}>
           <span className="sub-heading">Featured Products</span>
           <h2>Our Brass Components</h2>
         </div>
-        <div className="components-oval-container reveal" ref={addRevealRef}>
+        <div className="components-oval-container reveal reveal-up delay-1" ref={addRevealRef}>
           <div className="component-oval-item">
             <div className="component-oval-img">
               <img src={turnedImg} alt="Brass Turned component" />
@@ -363,68 +378,35 @@ const App = () => {
 
       {/* ========== QUALITY SECTION ========== */}
       <section className="section quality-section" id="quality-trust">
-        <div className="section-header reveal quality-header" ref={addRevealRef}>
+        <div className="section-header reveal reveal-up quality-header" ref={addRevealRef}>
           <span className="sub-heading quality-subheading">Quality You Can Trust</span>
           <h2 className="quality-heading">
             Delivering precision, consistency, and reliability in every component
           </h2>
         </div>
 
-        <div className="quality-grid reveal" ref={addRevealRef}>
-
-          <div className="quality-card">
-            <div className="quality-icon">
-              <img src={precisionIcon} alt="Quality Icon" style={{ width: '18px', height: '18px' }} />
+        <div className="quality-grid">
+          {[
+            { title: "Precision Inspection at Every Stage", desc: "Every component is carefully inspected throughout the manufacturing process to ensure accuracy, consistency, and defect-free production." },
+            { title: "High-Quality Raw Materials", desc: "We use premium-grade brass materials to ensure durability, strength, and long-lasting performance in every product." },
+            { title: "Advanced Testing Equipment", desc: "Our facility is equipped with modern testing tools and instruments to verify precision, dimensions, and overall product quality." },
+            { title: "Compliance with Global Standards", desc: "All components are manufactured in accordance with international quality standards to meet global industry requirements." },
+            { title: "Consistent Batch Production", desc: "We maintain uniformity across all production batches, ensuring consistent quality and performance in every delivery." },
+            { title: "Zero-Defect Quality Approach", desc: "Our strict quality control system is designed to minimize defects and deliver flawless components every time." }
+          ].map((card, i) => (
+            <div key={i} className={`quality-card reveal reveal-up delay-${(i % 3) + 1}`} ref={addRevealRef}>
+              <div className="quality-icon">
+                <img src={precisionIcon} alt="Quality Icon" style={{ width: '18px', height: '18px' }} />
+              </div>
+              <h4>{card.title}</h4>
+              <p>{card.desc}</p>
             </div>
-            <h4>Precision Inspection at Every Stage</h4>
-            <p>Every component is carefully inspected throughout the manufacturing process to ensure accuracy, consistency, and defect-free production.</p>
-          </div>
-
-          <div className="quality-card">
-            <div className="quality-icon">
-              <img src={precisionIcon} alt="Quality Icon" style={{ width: '18px', height: '18px' }} />
-            </div>
-            <h4>High-Quality Raw Materials</h4>
-            <p>We use premium-grade brass materials to ensure durability, strength, and long-lasting performance in every product.</p>
-          </div>
-
-          <div className="quality-card">
-            <div className="quality-icon">
-              <img src={precisionIcon} alt="Quality Icon" style={{ width: '18px', height: '18px' }} />
-            </div>
-            <h4>Advanced Testing Equipment</h4>
-            <p>Our facility is equipped with modern testing tools and instruments to verify precision, dimensions, and overall product quality.</p>
-          </div>
-
-          <div className="quality-card">
-            <div className="quality-icon">
-              <img src={precisionIcon} alt="Quality Icon" style={{ width: '18px', height: '18px' }} />
-            </div>
-            <h4>Compliance with Global Standards</h4>
-            <p>All components are manufactured in accordance with international quality standards to meet global industry requirements.</p>
-          </div>
-
-          <div className="quality-card">
-            <div className="quality-icon">
-              <img src={precisionIcon} alt="Quality Icon" style={{ width: '18px', height: '18px' }} />
-            </div>
-            <h4>Consistent Batch Production</h4>
-            <p>We maintain uniformity across all production batches, ensuring consistent quality and performance in every delivery.</p>
-          </div>
-
-          <div className="quality-card">
-            <div className="quality-icon">
-              <img src={precisionIcon} alt="Quality Icon" style={{ width: '18px', height: '18px' }} />
-            </div>
-            <h4>Zero-Defect Quality Approach</h4>
-            <p>Our strict quality control system is designed to minimize defects and deliver flawless components every time.</p>
-          </div>
-
+          ))}
         </div>
       </section>
 
       {/* ========== GLOBAL MAP & CTA SECTION ========== */}
-      <section className="section global-cta-section reveal" ref={addRevealRef} id="contact-map">
+      <section className="section global-cta-section reveal reveal-up" ref={addRevealRef} id="contact-map">
         <div className="global-cta-header">
           <h2>Looking for a Reliable Manufacturing Partner?</h2>
           <p>Get precision-engineered brass components tailored to your exact requirements.</p>
