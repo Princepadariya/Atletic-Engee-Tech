@@ -1,0 +1,111 @@
+/* --- GLOBAL MAP & CTA SECTION --- */
+.global-cta-section {
+  background: var(--bg-white);
+  text-align: center;
+  padding: 6rem 10.5%;
+  margin: 0 auto;
+}
+
+
+/* Redundant header styles removed - now handled by global .comp-header classes */
+
+
+.global-map-container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+}
+
+.world-map-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.global-cta-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  text-align: left;
+  max-width: 1200px;
+  margin: 2rem auto 0px;
+}
+
+.global-cta-text {
+  flex: 1;
+  max-width: 750px;
+}
+
+.global-cta-text p {
+  color: #000000;
+  font-size: 1.65rem;
+  line-height: 1.6;
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+
+
+.global-flags {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.25rem;
+  row-gap: 1.25rem;
+}
+
+.global-flags img {
+  width: 97px;
+  height: 54px;
+  object-fit: cover;
+  border-radius: 2px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+
+/* --- CUSTOM CONTACT BUTTON --- */
+.global-cta-text .btn-explore {
+  color: #1f2542;
+  transition: all 0.3s ease;
+}
+
+.global-cta-text .btn-explore::before {
+  background: #1f2542;
+  /* This creates the outer navy shape */
+  clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px);
+}
+
+.global-cta-text .btn-explore::after {
+  content: '';
+  position: absolute;
+  top: 1.5px;
+  left: 1.5px;
+  right: 1.5px;
+  bottom: 1.5px;
+  background: var(--bg-white);
+  /* This creates the inner fill, showing the border */
+  clip-path: polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px);
+  z-index: -1;
+  transition: all 0.3s ease;
+}
+
+.global-cta-text .btn-explore:hover {
+  color: #ffffff;
+}
+
+.global-cta-text .btn-explore:hover::after {
+  background: #1f2542;
+}
+
+@media (max-width: 768px) {
+  .global-cta-footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 2.5rem;
+  }
+
+  .global-cta-text p {
+    text-align: center;
+    margin: 0 auto 2rem;
+  }
+}

@@ -1,0 +1,130 @@
+/* --- ABOUT PRECISION SECTION --- */
+.about-precision-section {
+  background: #F4F8FF;
+  padding: 5rem 10.5%;
+}
+
+.about-precision-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+/* Left Content */
+.about-precision-left {
+  max-width: 600px;
+}
+
+.precision-title {
+  font-family: var(--heading-font);
+  font-weight: 700;
+  font-size: clamp(2.5rem, 4vw, 2.75rem);
+  color: #0b1534;
+  line-height: 1.15;
+  margin-bottom: 2rem;
+}
+
+.precision-line {
+  width: 90px;
+  height: 4px;
+  background: #1a1a1a;
+  margin-bottom: 3rem;
+}
+
+.precision-main-desc {
+  font-family: var(--body-font);
+  color: #585D76;
+  font-size: 1.25rem;
+  line-height: 1.7;
+}
+
+/* Right Side - Cards */
+.about-precision-right {
+  width: 100%;
+}
+
+.precision-cards-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.industry-focus-card:last-child {
+  grid-column: span 2;
+}
+
+.industry-focus-card {
+  background: #EAEEFF;
+  border: 1px solid #1F2542;
+  border-radius: 10px;
+  padding: 1.25rem 1.5rem;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  height: 100%;
+}
+
+.industry-focus-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+}
+
+.focus-card-icon {
+  color: #0b1534;
+  margin-bottom: 1.2rem;
+}
+
+.focus-card-title {
+  font-family: var(--heading-font);
+  font-weight: 800;
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
+  color: #1a202c;
+  margin-bottom: 1.2rem;
+  text-transform: uppercase;
+}
+
+.focus-card-desc {
+  font-family: var(--body-font);
+  color: #718096;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .precision-title {
+    font-size: 2.4rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .about-precision-section {
+    padding: 6rem 5%;
+  }
+
+  .about-precision-grid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+
+  .about-precision-left {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .precision-cards-row {
+    grid-template-columns: 1fr;
+  }
+
+  .industry-focus-card:last-child {
+    grid-column: span 1;
+  }
+
+  .precision-title {
+    font-size: 2rem;
+  }
+}

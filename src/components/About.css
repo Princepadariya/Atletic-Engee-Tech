@@ -1,0 +1,212 @@
+/* --- ABOUT / INTRO SECTION --- */
+.about-section {
+  padding-top: 5rem;
+  background: #F4F8FF;
+}
+
+/* Custom header for the Performance section */
+.perf-deliver-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-bottom: 5rem;
+}
+
+.perf-deliver-title {
+  flex: 1.2;
+}
+
+.perf-deliver-title h2 {
+  font-family: var(--heading-font);
+  font-weight: 700;
+  font-size: clamp(2.5rem, 4vw, 2.75rem);
+  color: var(--heading-color);
+  margin-bottom: 5rem;
+}
+
+.title-underline {
+  width: 110px;
+  height: 5px;
+  background: var(--heading-color);
+}
+
+.perf-deliver-desc {
+  flex: 1;
+}
+
+.perf-deliver-desc p {
+  color: #585D76;
+  font-size: 1.25rem;
+  line-height: 1.7;
+  max-width: 580px;
+}
+
+.sub-heading {
+  display: block;
+  font-family: var(--body-font);
+  color: var(--body-color);
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.new-about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  margin-bottom: 5rem;
+}
+
+.about-images {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.about-img-top,
+.about-img-bottom {
+  height: 235px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.about-img-top {
+  width: 75%;
+}
+
+.about-img-bottom {
+  width: 100%;
+}
+
+.about-desc {
+  font-family: var(--body-font);
+  color: var(--body-color);
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 3.5rem;
+}
+
+/* Progress Bars */
+.progress-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 450px;
+}
+
+.progress-item {
+  width: 100%;
+}
+
+.progress-label {
+  display: flex;
+  justify-content: flex-start;
+  font-family: var(--body-font);
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: var(--heading-color);
+}
+
+.progress-bar-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.progress-val {
+  font-family: var(--body-font);
+  font-weight: 500;
+  font-size: 1.2rem;
+  color: var(--heading-color);
+  min-width: 35px;
+}
+
+.progress-track {
+  flex: 1;
+  height: 14px;
+  background: #EAF0F6;
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  width: var(--fill);
+  height: 100%;
+  background: var(--heading-color);
+  border-radius: 10px;
+}
+
+/* Flat Stats Bar */
+.flat-stats-bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.flat-stat-item {
+  border-left: 1px solid #D1D4DF;
+  padding-left: 2rem;
+}
+
+.flat-stat-item:first-child {
+  border-left: none;
+  padding-left: 0;
+}
+
+.flat-stat-item h3 {
+  font-family: var(--body-font);
+  font-weight: 300;
+  font-size: 2.25rem;
+  color: var(--heading-color);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+.flat-stat-item p {
+  color: var(--heading-color);
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+@media (max-width: 992px) {
+  .new-about {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .about-img-top {
+    width: 100%;
+  }
+
+  .flat-stats-bar {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .flat-stat-item:nth-child(3) {
+    border-left: none;
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .flat-stats-bar {
+    grid-template-columns: 1fr;
+  }
+
+  .flat-stat-item {
+    border-left: none;
+    border-bottom: 1px solid var(--border-light);
+    padding-left: 0;
+    padding-bottom: 1.5rem;
+  }
+
+  .flat-stat-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+}

@@ -1,0 +1,11 @@
+.related-products-section {
+  padding: 5rem 10.5%;
+  background: #F4F8FF;
+}
+
+@media (max-width: 992px) {
+  .related-products-section {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}

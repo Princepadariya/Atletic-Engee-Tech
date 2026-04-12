@@ -1,0 +1,123 @@
+/* --- NAVBAR --- */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.75rem 10.5%;
+  background: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  transition: box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.navbar.scrolled {
+  box-shadow: 0 2px 20px rgba(31, 37, 66, 0.06);
+}
+
+.navbar-logo a {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.navbar-logo img {
+  height: 36px;
+}
+
+.logo-text {
+  font-family: 'Inter', sans-serif;
+  font-weight: 200;
+  font-size: 1.35rem;
+  color: rgba(255, 255, 255, 0.88);
+  white-space: nowrap;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-links a {
+  font-family: var(--body-font);
+  font-weight: 400;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.88);
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.nav-links a:hover {
+  color: #ffffff;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.8);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.navbar-quality .nav-links a {
+  color: #1F2542;
+}
+
+.navbar-quality .nav-links a::after {
+  background: #1F2542;
+}
+
+.navbar-quality .logo-text {
+  color: #1F2542;
+}
+
+.nav-cta {
+  background: var(--heading-color);
+  color: var(--bg-white) !important;
+  padding: 0.6rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 500 !important;
+  transition: background 0.3s ease, transform 0.2s ease !important;
+}
+
+.nav-cta:hover {
+  background: var(--accent);
+  transform: translateY(-1px);
+}
+
+.nav-cta::after {
+  display: none !important;
+}
+
+.mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.85);
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.75rem 6%;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .mobile-toggle {
+    display: block;
+  }
+}

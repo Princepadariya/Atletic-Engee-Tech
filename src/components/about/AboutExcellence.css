@@ -1,0 +1,233 @@
+/* --- MANUFACTURING EXCELLENCE SECTION --- */
+.about-excellence-section {
+  background: #f4f8ff;
+  padding: 5rem 10.5%;
+}
+
+.about-excellence-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.45fr;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+/* Left Content */
+.excellence-left {
+  max-width: 480px;
+}
+
+.excellence-main-title {
+  font-family: var(--heading-font);
+  font-weight: 700;
+  font-size: clamp(2.5rem, 4vw, 2.75rem);
+  color: #0b1534;
+  line-height: 1.1;
+  margin-bottom: 2rem;
+}
+
+.excellence-main-desc {
+  font-family: var(--body-font);
+  color: #585d76;
+  font-size: 1.25rem;
+  line-height: 1.7;
+}
+
+/* Right Content - Cards Grid */
+.excellence-right {
+  width: 100%;
+  height: 100%;
+}
+
+.excellence-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.excellence-card-item {
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid rgba(31, 37, 66, 0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  transition: all 0.4s ease;
+  height: 100%;
+}
+
+.excellence-card-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+.card-light {
+  background: #F4F8FF;
+}
+
+.card-dark {
+  background: #0b1534;
+  color: #ffffff;
+}
+
+.icon-box-dark {
+  width: 44px;
+  height: 44px;
+  background: #1e253c;
+  color: #ffffff;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-box-outline {
+  width: 44px;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-title {
+  font-family: var(--body-font);
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.02em;
+  color: #0A102C;
+}
+
+.card-dark .card-title {
+  color: #ffffff;
+}
+
+.card-desc {
+  font-family: var(--body-font);
+  font-size: 0.8rem;
+  color: #585d76;
+  line-height: 1.5;
+}
+
+.card-dark .card-desc {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.tolerance-pills-bar {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  background: #e4efff;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #1a2c5a;
+  letter-spacing: 0.05em;
+}
+
+/* Wide Card */
+.excellence-card-wide {
+  grid-column: span 2;
+  background: #F4F8FF;
+  border: 1px solid rgba(31, 37, 66, 0.5);
+  padding: 1.5rem 2.5rem;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  transition: all 0.4s ease;
+}
+
+.excellence-card-wide:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.wide-icon-circle {
+  width: 72px;
+  height: 72px;
+  background: #DBE7FF;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0b1534;
+  flex-shrink: 0;
+}
+
+.wide-content {
+  flex-grow: 1;
+}
+
+.wide-content .card-title {
+  margin-bottom: 0.4rem;
+}
+
+.standards-pills {
+  display: flex;
+  margin-left: 1rem;
+  flex-shrink: 0;
+}
+
+.standards-pills span {
+  background: #E4E9F2;
+  padding: 0.8rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #0b1534;
+  min-width: 60px;
+  text-align: center;
+  border: 3px solid #F4F8FF;
+  margin-left: -12px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+}
+
+.standards-pills span:first-child {
+  margin-left: 0;
+  background: #E7EDF7;
+  z-index: 3;
+}
+
+.standards-pills span:nth-child(2) {
+  background: #D5DEEC;
+  z-index: 2;
+}
+
+.standards-pills span.highlight-pill {
+  background: #96A4B8;
+  color: #ffffff;
+  z-index: 1;
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .about-excellence-grid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+
+  .excellence-left {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .excellence-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .excellence-card-wide {
+    grid-column: span 1;
+    flex-direction: column;
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+  }
+}

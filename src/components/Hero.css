@@ -1,0 +1,161 @@
+/* --- NEW HERO SECTION (Full Viewport Dark) --- */
+.hero-new {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  background: #0d1132;
+  padding-top: 90px;
+  box-sizing: border-box;
+}
+
+/* Background image layer */
+.hero-new::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--hero-bg-image);
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+/* Dark navy gradient overlay — dense on left, fades right */
+.hero-new::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right,
+      rgba(10, 13, 45, 0.97) 0%,
+      rgba(10, 13, 45, 0.94) 30%,
+      rgba(10, 13, 45, 0.78) 50%,
+      rgba(10, 13, 45, 0.45) 70%,
+      rgba(10, 13, 45, 0.20) 100%);
+  z-index: 1;
+}
+
+/* Content block — sits above overlay */
+.hero-content-wrap {
+  position: relative;
+  z-index: 2;
+  padding: 0 10.5%;
+  max-width: 950px;
+  margin: auto 0;
+}
+
+/* PRECISION ENGINEERING pill badge */
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
+  padding: 0.5rem 2rem 0.5rem 1.2rem;
+  font-family: var(--body-font);
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #C0C5E2;
+  margin-bottom: 2.2rem;
+}
+
+.hero-badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #C0C5E2;
+  flex-shrink: 0;
+}
+
+/* Bold white primary heading */
+.hero-heading-primary {
+  font-family: var(--heading-font);
+  font-weight: 700;
+  font-size: clamp(2.5rem, 4.5vw, 3.75rem);
+  line-height: 1.1;
+  color: #ffffff;
+  margin: 0;
+  white-space: nowrap;
+  line-height: 5rem;
+}
+
+/* Muted slate secondary heading */
+.hero-heading-secondary {
+  font-family: var(--heading-font);
+  font-weight: 700;
+  font-size: clamp(2.5rem, 4.5vw, 3.75rem);
+  line-height: 1.1;
+  color: rgba(145, 152, 190, 0.75);
+  margin: 0 0 2rem;
+  white-space: nowrap;
+  line-height: 5rem;
+}
+
+/* Body paragraph */
+.hero-body-text {
+  font-family: var(--body-font);
+  color: #868CAF;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 2.8rem;
+}
+
+/* Hide legacy wrappers */
+.hero-top-content {
+  display: none !important;
+}
+
+.hero-title {
+  display: none !important;
+}
+
+.hero-desc {
+  display: none !important;
+}
+
+.hero-image-wrapper {
+  display: none !important;
+}
+
+.hero-main-img {
+  display: none !important;
+}
+
+.hero-stats-overlay {
+  display: none !important;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 60vh;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-stats-overlay {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+}
+
+/* --- OVERRIDE GLOBAL BUTTON FOR DARK HERO --- */
+.hero-content-wrap .btn-explore::after {
+  background: #0A0D2D;
+  /* Matches the start of the hero gradient */
+}
+
+.hero-content-wrap .btn-explore:hover::after {
+  background: #ffffff;
+}

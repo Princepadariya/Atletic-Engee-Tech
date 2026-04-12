@@ -1,0 +1,151 @@
+/* --- METROLOGY HUB --- */
+.metrology-hub-section {
+  padding: 5rem 10.5%;
+  background: #F4F8FF;
+  overflow: hidden;
+  position: relative;
+}
+
+.vmm-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 0.9fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.vmm-content {
+  position: relative;
+  z-index: 2;
+}
+
+.vmm-watermark {
+  position: absolute;
+  top: -60px;
+  left: -20px;
+  font-family: var(--heading-font);
+  font-size: 15rem;
+  font-weight: 900;
+  color: #1F2542;
+  opacity: 0.04;
+  line-height: 0.8;
+  pointer-events: none;
+  z-index: -1;
+  display: flex;
+  flex-direction: column;
+}
+
+.vmm-watermark span {
+  margin-left: 0rem;
+  margin-top: 10rem;
+}
+
+.vmm-title {
+  padding-left: 2.5rem;
+  font-family: var(--heading-font);
+  font-size: clamp(2.5rem, 4vw, 2.75rem);
+  font-weight: 700;
+  color: #1F2542;
+  margin-bottom: 2rem;
+  letter-spacing: -0.02em;
+  margin-top: 3rem;
+}
+
+.vmm-badges {
+  padding-left: 2.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.vmm-badge {
+  padding: 0.3rem 1.2rem;
+  background: #E1E3E4;
+  border-left: 3px solid #001731;
+  font-family: var(--heading-font);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #43474E;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.vmm-features {
+  padding-left: 2.5rem;
+  list-style: none;
+  margin: 0 0 3rem 0;
+}
+
+.vmm-features li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: var(--body-font);
+  font-size: 1.15rem;
+  color: #43474E;
+  margin-bottom: 1.4rem;
+  font-weight: 500;
+}
+
+.check-icon {
+  width: 1.2rem;
+  height: 1.2rem;
+  color: #4a5568;
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+
+.datasheet-link {
+  padding-left: 2.5rem;
+  display: inline-block;
+  font-family: var(--heading-font);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1F2542;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+
+/* Visual */
+.vmm-visual {
+  position: relative;
+  z-index: 2;
+}
+
+.vmm-image-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.vmm-image {
+  width: 100%;
+  max-width: 580px;
+  height: auto;
+  filter: drop-shadow(30px 40px 60px rgba(0, 0, 0, 0.1));
+  transition: transform 0.5s ease;
+}
+
+.vmm-image:hover {
+  transform: translateY(-10px);
+}
+
+@media (max-width: 1024px) {
+  .vmm-grid {
+    grid-template-columns: 1fr;
+    gap: 6rem;
+  }
+
+  .metrology-hub-section {
+    padding: 6rem 5%;
+  }
+
+  .vmm-watermark {
+    font-size: 10rem;
+    top: -30px;
+  }
+}
