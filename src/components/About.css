@@ -173,6 +173,16 @@
 }
 
 @media (max-width: 992px) {
+  .perf-deliver-header {
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 3.5rem;
+  }
+
+  .perf-deliver-desc p {
+    font-size: 1.1rem;
+    max-width: 100%;
+  }
   .new-about {
     grid-template-columns: 1fr;
     gap: 3rem;

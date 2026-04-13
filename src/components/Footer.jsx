@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowUp } from 'lucide-react';
+import { ArrowUp, Heart } from 'lucide-react';
 import footerLogo from '../assets/images/Atletic logo bg remove 2.svg';
 import './Footer.css';
 
@@ -90,7 +90,12 @@ const Footer = () => {
 
           {/* ROW 3: Bottom Elements */}
           <div className="footer-copyright-wrap">
-            <p className="copyright">© 2026 — All Copyrights reserved for Atletic Engee Tech</p>
+            <div className="footer-bottom-content">
+              <p className="copyright">© 2026 — All Copyrights reserved for Atletic Engee Tech</p>
+              <p className="developer-tag">
+                Designed and developed with <Heart size={14} className="heart-icon" fill="currentColor" /> by <a href="https://codelixitsolutions.com" target="_blank" rel="noopener noreferrer" className="codelix-link">Codelix</a>
+              </p>
+            </div>
           </div>
 
           <div className="footer-back-to-top-wrap">

@@ -80,8 +80,6 @@
   line-height: 1.1;
   color: #ffffff;
   margin: 0;
-  white-space: nowrap;
-  line-height: 5rem;
 }
 
 /* Muted slate secondary heading */
@@ -92,8 +90,6 @@
   line-height: 1.1;
   color: rgba(145, 152, 190, 0.75);
   margin: 0 0 2rem;
-  white-space: nowrap;
-  line-height: 5rem;
 }
 
 /* Body paragraph */
@@ -105,48 +101,40 @@
   margin-bottom: 2.8rem;
 }
 
-/* Hide legacy wrappers */
-.hero-top-content {
-  display: none !important;
-}
-
-.hero-title {
-  display: none !important;
-}
-
-.hero-desc {
-  display: none !important;
-}
-
-.hero-image-wrapper {
-  display: none !important;
-}
-
-.hero-main-img {
-  display: none !important;
-}
-
-.hero-stats-overlay {
-  display: none !important;
+@media (max-width: 1024px) {
+  .hero-content-wrap {
+    padding: 0 5%;
+  }
 }
 
 @media (max-width: 768px) {
-  .hero {
-    min-height: 60vh;
+  .hero-new {
+    height: auto;
+    min-height: 100vh;
+    padding-top: 120px;
+    padding-bottom: 5rem;
   }
 
-  .hero-content h1 {
-    font-size: 2rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-stats-overlay {
-    grid-template-columns: 1fr;
+  .hero-new::after {
+    background: rgba(10, 13, 45, 0.85);
   }
 
-  .hero-buttons {
-    flex-direction: column;
+  .hero-heading-primary, .hero-heading-secondary {
+    font-size: 2.8rem;
+    line-height: 1.2;
+    white-space: normal;
+  }
+
+  .hero-body-text {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    max-width: 100%;
+  }
+
+  .hero-badge {
+    padding: 0.4rem 1.2rem;
+    font-size: 0.7rem;
+    margin-bottom: 1.5rem;
   }
 }
 

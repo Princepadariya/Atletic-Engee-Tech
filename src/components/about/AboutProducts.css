@@ -191,4 +191,8 @@
   .products-top-row {
     grid-template-columns: 1fr;
   }
+
+  .small-card-icon {
+    margin-top: 2rem;
+  }
 }

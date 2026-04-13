@@ -1,0 +1,214 @@
+/* --- GLOBAL RESPONSIVE OVERRIDES --- */
+
+/* Uniform Section Padding */
+@media (max-width: 1400px) {
+  .section, .container, .navbar, .footer {
+    padding-left: 5% !important;
+    padding-right: 5% !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .section, .container, .navbar, .footer {
+    padding-left: 6% !important;
+    padding-right: 6% !important;
+    padding-top: 5rem !important;
+    padding-bottom: 5rem !important;
+  }
+}
+
+/* Header Flex Layouts */
+@media (max-width: 992px) {
+  .perf-deliver-header, .perf-header, .industry-header-flex, .quality-header, .comp-header {
+    flex-direction: column !important;
+    gap: 1.5rem !important;
+    margin-bottom: 3.5rem !important;
+  }
+
+  .perf-deliver-title h2, .perf-title h2, .header-left h2, .comp-title h2 {
+    font-size: 2.2rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  .perf-deliver-desc p, .perf-desc p, .header-right p, .comp-desc p {
+    font-size: 1.1rem !important;
+    max-width: 100% !important;
+  }
+}
+
+/* Grids - Default behavior */
+@media (max-width: 1100px) {
+  .oval-grid, .product-grid, .industry-cards-grid, .instruments-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .oval-grid, .product-grid, .industry-cards-grid, .instruments-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+
+  .oval-card, .product-card, .industry-card, .instrument-card {
+    min-height: auto !important;
+    padding: 2rem !important;
+  }
+
+  .product-card-img img, .card-img {
+    max-height: 200px !important;
+    width: auto !important;
+  }
+
+  .instrument-title, .product-title {
+    font-size: 1.25rem !important;
+  }
+}
+
+/* Performance Tabs */
+@media (max-width: 768px) {
+  .perf-tabs {
+    flex-wrap: wrap !important;
+    border-bottom: none !important;
+  }
+
+  .perf-tab {
+    flex: 1 1 50% !important;
+    border-bottom: 1px solid #676C86 !important;
+    padding: 1.25rem 0.5rem !important;
+    font-size: 0.95rem !important;
+  }
+
+  .perf-content {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+}
+
+/* Hero Section */
+@media (max-width: 768px) {
+  .hero-heading-primary, .hero-heading-secondary {
+    font-size: 2.5rem !important;
+    line-height: 1.2 !important;
+  }
+
+  .hero-body-text {
+    font-size: 1.15rem !important;
+    margin-bottom: 2rem !important;
+  }
+}
+
+/* Product Detail Page Overrides */
+@media (max-width: 768px) {
+  .product-detail-title {
+    font-size: 2.5rem !important;
+    line-height: 1.1 !important;
+    margin-bottom: 2rem !important;
+  }
+
+  .product-detail-desc {
+    font-size: 1.1rem !important;
+    line-height: 1.6 !important;
+    margin-bottom: 3rem !important;
+  }
+
+  .main-image-box {
+    aspect-ratio: 16/14 !important;
+    min-height: 300px !important;
+  }
+}
+
+/* Quality Page Overrides */
+@media (max-width: 992px) {
+  .quality-hero-layout {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 2rem !important;
+  }
+
+  .quality-hero-stat {
+    text-align: left !important;
+  }
+
+  .vmm-grid {
+    grid-template-columns: 1fr !important;
+    gap: 4rem !important;
+  }
+
+  .vmm-watermark {
+    font-size: 10rem !important;
+    top: -50px !important;
+  }
+
+  .integrity-grid {
+    grid-template-columns: 1fr !important;
+    gap: 4rem !important;
+  }
+
+  .performance-header {
+    flex-direction: column !important;
+    gap: 2rem !important;
+    margin-bottom: 3rem !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .quality-hero {
+    padding-top: 140px !important;
+    height: auto !important;
+    padding-bottom: 6rem !important;
+  }
+
+  .quality-hero-main-title {
+    font-size: 3rem !important;
+  }
+
+  .integrity-sub-stats {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+
+  .zero-text {
+    width: 100% !important;
+  }
+
+  .zero-stats-row {
+    flex-direction: column !important;
+    gap: 3rem !important;
+  }
+
+  .zero-watermark {
+    font-size: 18rem !important;
+    opacity: 0.03 !important;
+  }
+
+  .section-title {
+    font-size: 2.5rem !important;
+    margin-bottom: 2rem !important;
+  }
+
+  .title-line {
+    width: 80px !important;
+  }
+
+  .perf-card-num {
+    font-size: 2.5rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+}
+
+/* Global CTA & Map */
+@media (max-width: 768px) {
+  .global-cta-text p {
+    font-size: 1.4rem !important;
+  }
+
+  .global-flags {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 1.5rem !important;
+  }
+
+  .global-flags img {
+    width: 80px !important;
+    height: 45px !important;
+  }
+}

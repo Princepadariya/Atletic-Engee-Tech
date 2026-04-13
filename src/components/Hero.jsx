@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import heroImagePng from '../assets/images/hero_image.png';
 import './Hero.css';
+import MagneticButton from './MagneticButton';
 
 const Hero = () => {
   return (
@@ -14,9 +15,9 @@ const Hero = () => {
         {/* Badge */}
         <motion.div
           className="hero-badge"
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         >
           <span className="hero-badge-dot" />
           Precision Engineering
@@ -25,29 +26,63 @@ const Hero = () => {
         {/* Primary heading */}
         <motion.h1
           className="hero-heading-primary"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.75, delay: 0.1 }}
+          initial="hidden"
+          animate="visible"
+          variants={{
+            visible: { transition: { staggerChildren: 0.1 } }
+          }}
         >
-          Beyond <br /> Manufacturing:
+          {"Beyond Manufacturing:".split(" ").map((word, i) => (
+            <motion.span
+              key={i}
+              style={{ display: 'inline-block', marginRight: '0.25em', overflow: 'hidden', verticalAlign: 'top' }}
+              variants={{
+                hidden: { y: '100%', opacity: 0 },
+                visible: { 
+                  y: 0, 
+                  opacity: 1, 
+                  transition: { duration: 1, ease: [0.22, 1, 0.36, 1] } 
+                }
+              }}
+            >
+              {word}
+            </motion.span>
+          ))}
         </motion.h1>
 
         {/* Secondary muted heading */}
         <motion.h2
           className="hero-heading-secondary"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.75, delay: 0.2 }}
+          initial="hidden"
+          animate="visible"
+          variants={{
+            visible: { transition: { staggerChildren: 0.1, delayChildren: 0.3 } }
+          }}
         >
-          Your Complete <br /> Defence Solutions Partner
+          {"Your Complete Defence Solutions Partner".split(" ").map((word, i) => (
+            <motion.span
+              key={i}
+              style={{ display: 'inline-block', marginRight: '0.25em', overflow: 'hidden', verticalAlign: 'top' }}
+              variants={{
+                hidden: { y: '100%', opacity: 0 },
+                visible: { 
+                  y: 0, 
+                  opacity: 1, 
+                  transition: { duration: 1, ease: [0.22, 1, 0.36, 1] } 
+                }
+              }}
+            >
+              {word}
+            </motion.span>
+          ))}
         </motion.h2>
 
         {/* Body text */}
         <motion.p
           className="hero-body-text"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.75, delay: 0.35 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.4 }}
         >
           From precision components to advanced defence assemblies, we
           transform complex engineering challenges into reliable, mission-ready
@@ -55,14 +90,17 @@ const Hero = () => {
         </motion.p>
 
         {/* CTA button */}
-        <motion.button
-          className="btn-explore"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.75, delay: 0.5 }}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
         >
-          Explore More
-        </motion.button>
+          <MagneticButton>
+            <button className="btn-explore">
+              Explore More
+            </button>
+          </MagneticButton>
+        </motion.div>
       </div>
     </section>
   );

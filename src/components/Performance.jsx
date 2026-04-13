@@ -1,13 +1,22 @@
 import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import perfImage from '../assets/images/Rectangle 45.png';
 import './Performance.css';
 
-const Performance = ({ addRevealRef }) => {
+const Performance = () => {
   const [activePerfTab, setActivePerfTab] = useState(0);
 
+  const tabs = ['CNC Machining', 'Quality Control', 'Production Efficiency', 'Compliance'];
+
   return (
-    <section className="section perf-section reveal reveal-up" id="manufacturing" ref={addRevealRef}>
-      <div className="perf-header">
+    <section className="section perf-section" id="manufacturing">
+      <motion.div 
+        className="perf-header"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      >
         <div className="perf-title">
           <h2>Precision Manufacturing,<br />Built for Performance</h2>
           <div className="perf-underline"></div>
@@ -17,22 +26,50 @@ const Performance = ({ addRevealRef }) => {
             We use advanced CNC machining and automated processes to ensure high precision. Strict quality control guarantees consistent and reliable brass components. Built to meet global standards for defense, EV, and industrial applications.
           </p>
         </div>
-      </div>
+      </motion.div>
 
-      <div className="perf-tabs">
-        {['CNC Machining', 'Quality Control', 'Production Efficiency', 'Compliance'].map((tab, i) => (
+      <motion.div 
+        className="perf-tabs"
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+      >
+        {tabs.map((tab, i) => (
           <div
             key={i}
             className={`perf-tab ${activePerfTab === i ? 'active' : ''}`}
             onClick={() => setActivePerfTab(i)}
           >
             {tab}
+            {activePerfTab === i && (
+              <motion.div 
+                layoutId="perf-tab-active"
+                className="perf-tab-underline"
+                initial={false}
+                transition={{ type: 'spring', stiffness: 500, damping: 30 }}
+                style={{
+                  position: 'absolute',
+                  bottom: 0,
+                  left: 0,
+                  right: 0,
+                  height: '2px',
+                  background: 'var(--accent)'
+                }}
+              />
+            )}
           </div>
         ))}
-      </div>
+      </motion.div>
 
       <div className="perf-content">
-        <div className="perf-details">
+        <motion.div 
+          className="perf-details"
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+        >
           <h3>Details</h3>
 
           <div className="perf-card">
@@ -54,11 +91,17 @@ const Performance = ({ addRevealRef }) => {
               <h4>Manufactured with precision, not compromise.</h4>
             </div>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="perf-image">
+        <motion.div 
+          className="perf-image"
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, delay: 0.4 }}
+        >
           <img src={perfImage} alt="CNC Machining Facility" />
-        </div>
+        </motion.div>
       </div>
     </section>
   );

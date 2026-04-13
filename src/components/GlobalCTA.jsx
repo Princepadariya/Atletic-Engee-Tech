@@ -1,11 +1,19 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import mapSvg from '../assets/images/map-base 1.svg';
 import './GlobalCTA.css';
+import MagneticButton from './MagneticButton';
 
-const GlobalCTA = ({ addRevealRef }) => {
+const GlobalCTA = () => {
   return (
     <section className="section global-cta-section" id="contact-map">
-      <div className="global-cta-header comp-header reveal reveal-up" ref={addRevealRef}>
+      <motion.div 
+        className="global-cta-header comp-header"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      >
         <div className="comp-title">
           <h2>Serving Global Markets</h2>
           <div className="comp-underline"></div>
@@ -13,20 +21,41 @@ const GlobalCTA = ({ addRevealRef }) => {
         <div className="comp-desc">
           <p>Serving clients worldwide with precision-engineered brass components, ensuring consistent quality, reliable delivery, and compliance with international standards across industries.</p>
         </div>
-      </div>
+      </motion.div>
 
-      <div className="global-map-container">
+      <motion.div 
+        className="global-map-container"
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1, delay: 0.2 }}
+      >
         <img src={mapSvg} alt="Global Operations Map" className="world-map-img" />
-      </div>
+      </motion.div>
 
       <div className="global-cta-footer">
-        <div className="global-cta-text">
+        <motion.div 
+          className="global-cta-text"
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+        >
           <p>Partner with us for high-quality manufacturing, consistent performance, and on-time delivery across global markets.</p>
-          <a href="#contact" className="btn-explore" style={{ display: 'inline-block', textDecoration: 'none' }}>
-            Contact Now
-          </a>
-        </div>
-        <div className="global-flags">
+          <MagneticButton>
+            <a href="#contact" className="btn-explore" style={{ display: 'inline-block', textDecoration: 'none' }}>
+              Contact Now
+            </a>
+          </MagneticButton>
+        </motion.div>
+        
+        <motion.div 
+          className="global-flags"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+        >
           <img src="https://flagcdn.com/w320/us.png" alt="USA" />
           <img src="https://flagcdn.com/w320/de.png" alt="Germany" />
           <img src="https://flagcdn.com/w320/pe.png" alt="Peru" />
@@ -35,7 +64,7 @@ const GlobalCTA = ({ addRevealRef }) => {
           <img src="https://flagcdn.com/w320/es.png" alt="Spain" />
           <img src="https://flagcdn.com/w320/it.png" alt="Italy" />
           <div className="flag-placeholder"></div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

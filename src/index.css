@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@200..800&family=Poppins:wght@300;400;500;600;700&display=swap');
+@import './responsive.css';
 
 /* Biennale is a premium font - using a close system fallback. 
    To use actual Biennale, place font files in /src/assets/fonts/ 
@@ -35,6 +36,26 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
 }
 
 body {
@@ -89,28 +110,27 @@ button {
 
 /* --- SHARED SECTION STYLES --- */
 .section {
-  padding: 5rem 10.5%;
+  padding: 8rem 10.5%;
 }
 
-.section-header {
-  text-align: center;
-  margin: 0 auto 3rem;
+@media (max-width: 1400px) {
+  .section {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
 }
 
-.section-header h2 {
-  font-family: var(--heading-font);
-  font-weight: 400;
-  font-size: clamp(1.75rem, 3.5vw, 3.1rem);
-  color: var(--heading-color);
-  margin-bottom: 1rem;
+@media (max-width: 768px) {
+  .section {
+    padding: 5rem 6%;
+  }
 }
 
-.section-header p {
-  font-family: var(--body-font);
-  font-weight: 400;
-  color: var(--body-color);
-  font-size: 1rem;
-  line-height: 1.7;
+/* Typography Resets */
+@media (max-width: 768px) {
+  h1 { font-size: 2.5rem; }
+  h2 { font-size: 2rem; }
+  h3 { font-size: 1.5rem; }
 }
 
 /* --- REVEAL ANIMATIONS --- */

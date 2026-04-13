@@ -13,8 +13,8 @@ const DetailHero = ({ product, addRevealRef }) => {
           </div>
           <div className="thumbnail-row">
             {product.gallery.map((img, idx) => (
-              <div 
-                key={idx} 
+              <div
+                key={idx}
                 className={`thumb-box ${activeImg === img ? 'active' : ''}`}
                 onClick={() => setActiveImg(img)}
               >

@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import swapIcon from '../assets/images/tdesign_swap-right.svg';
 import turnedImg from '../assets/images/ISO 90012015 Certified Facility 3.png';
 import forgedImg from '../assets/images/ISO 90012015 Certified Facility 2.png';
@@ -15,11 +16,34 @@ const productData = [
   { id: 5, title: 'Brass Stamping component', img: stampingImg },
 ];
 
-const ComponentsOval = ({ addRevealRef }) => {
+const ComponentsOval = () => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.1 }
+    }
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] }
+    }
+  };
+
   return (
     <section className="section components-oval-section" id="oval-components">
       <div className="components-oval-content">
-        <div className="comp-header reveal reveal-up" ref={addRevealRef}>
+        <motion.div 
+          className="comp-header"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
           <div className="comp-title">
             <h2>Precision Manufacturing,<br />Built for Performance</h2>
             <div className="comp-underline"></div>
@@ -31,14 +55,24 @@ const ComponentsOval = ({ addRevealRef }) => {
               Built to meet global standards for defense, EV, and industrial applications.
             </p>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="oval-grid">
-          {productData.map((product, i) => (
-            <div
+        <motion.div 
+          className="oval-grid"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+        >
+          {productData.map((product) => (
+            <motion.div
               key={product.id}
-              className={`oval-card reveal reveal-up delay-${(i % 3) + 1}`}
-              ref={addRevealRef}
+              className="oval-card"
+              variants={cardVariants}
+              whileHover={{ 
+                y: -10,
+                transition: { duration: 0.3 }
+              }}
             >
               <div className="oval-card-header">
                 <span className="oval-ring"></span>
@@ -50,9 +84,9 @@ const ComponentsOval = ({ addRevealRef }) => {
               <div className="oval-card-footer">
                 <img src={swapIcon} alt="swap" className="oval-swap-icon" />
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

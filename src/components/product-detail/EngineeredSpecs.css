@@ -140,6 +140,11 @@
   }
 
   .dark-index-card {
-    padding: 3rem 2rem;
+    padding: 2.5rem 1.5rem;
+  }
+
+  .std-name,
+  .std-code {
+    white-space: normal;
   }
 }

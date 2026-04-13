@@ -1,5 +1,4 @@
 import React from 'react';
-import useScrollReveal from '../hooks/useScrollReveal';
 
 // Components
 import Hero from '../components/Hero';
@@ -11,17 +10,15 @@ import Quality from '../components/Quality';
 import GlobalCTA from '../components/GlobalCTA';
 
 const Home = () => {
-  const addRevealRef = useScrollReveal();
-
   return (
     <>
       <Hero />
-      <About addRevealRef={addRevealRef} />
-      <IndustryServe addRevealRef={addRevealRef} />
-      <Performance addRevealRef={addRevealRef} />
-      <ComponentsOval addRevealRef={addRevealRef} />
-      <Quality addRevealRef={addRevealRef} />
-      <GlobalCTA addRevealRef={addRevealRef} />
+      <About />
+      <IndustryServe />
+      <Performance />
+      <ComponentsOval />
+      <Quality />
+      <GlobalCTA />
     </>
   );
 };
