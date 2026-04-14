@@ -71,9 +71,10 @@ const App = () => {
                 left: 0,
                 right: 0,
                 height: '4px',
-                background: 'var(--accent)',
+                background: 'linear-gradient(90deg, #312e81 0%, #4338ca 25%, #4f46e5 50%, #6366f1 75%, #818cf8 100%)',
                 transformOrigin: '0%',
-                zIndex: 1001
+                zIndex: 1001,
+                boxShadow: '0 0 10px rgba(79, 70, 229, 0.4)'
               }}
             />
             <Navbar />

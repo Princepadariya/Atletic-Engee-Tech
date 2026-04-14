@@ -29,23 +29,23 @@ const Hero = () => {
           initial="hidden"
           animate="visible"
           variants={{
-            visible: { transition: { staggerChildren: 0.1 } }
+            visible: { transition: { staggerChildren: 0.15 } }
           }}
         >
-          {"Beyond Manufacturing:".split(" ").map((word, i) => (
+          {["Beyond", "Manufacturing"].map((line, i) => (
             <motion.span
               key={i}
-              style={{ display: 'inline-block', marginRight: '0.25em', overflow: 'hidden', verticalAlign: 'top' }}
+              style={{ display: 'block', overflow: 'hidden', whiteSpace: 'nowrap' }}
               variants={{
                 hidden: { y: '100%', opacity: 0 },
-                visible: { 
-                  y: 0, 
-                  opacity: 1, 
-                  transition: { duration: 1, ease: [0.22, 1, 0.36, 1] } 
+                visible: {
+                  y: 0,
+                  opacity: 1,
+                  transition: { duration: 1, ease: [0.22, 1, 0.36, 1] }
                 }
               }}
             >
-              {word}
+              {line}
             </motion.span>
           ))}
         </motion.h1>
@@ -56,23 +56,23 @@ const Hero = () => {
           initial="hidden"
           animate="visible"
           variants={{
-            visible: { transition: { staggerChildren: 0.1, delayChildren: 0.3 } }
+            visible: { transition: { staggerChildren: 0.15, delayChildren: 0.3 } }
           }}
         >
-          {"Your Complete Defence Solutions Partner".split(" ").map((word, i) => (
+          {["Your Complete", "Defence Solutions Partner"].map((line, i) => (
             <motion.span
               key={i}
-              style={{ display: 'inline-block', marginRight: '0.25em', overflow: 'hidden', verticalAlign: 'top' }}
+              style={{ display: 'block', overflow: 'hidden', whiteSpace: 'nowrap' }}
               variants={{
                 hidden: { y: '100%', opacity: 0 },
-                visible: { 
-                  y: 0, 
-                  opacity: 1, 
-                  transition: { duration: 1, ease: [0.22, 1, 0.36, 1] } 
+                visible: {
+                  y: 0,
+                  opacity: 1,
+                  transition: { duration: 1, ease: [0.22, 1, 0.36, 1] }
                 }
               }}
             >
-              {word}
+              {line}
             </motion.span>
           ))}
         </motion.h2>
